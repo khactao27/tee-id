@@ -1,7 +1,70 @@
-import { TextInput, Text, View } from 'react-native'
+import {
+    TextInput,
+    Text,
+    SafeAreaView,
+    TouchableOpacity,
+    ScrollView,
+    View
+} from 'react-native'
+
+import { useState } from 'react'
+import styles from './styles'
+import { Spacer } from '@components'
 
 export const Profile = () => {
     return (
-        <TextInput placeholder='Xin Chao day la thong tin ca nhan cua ban'/>
+        <SafeAreaView>
+            <ScrollView>
+                <TouchableOpacity style={styles.ListItem}>
+                    <View style={styles.ListItemContent}>
+                        <Text style={styles.TextStyles}>Nick</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.ListItem}>
+                    <View style={styles.ListItemContent}>
+                        <Text style={styles.TextStyles}>Nick</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.ListItem}>
+                    <View style={styles.ListItemContent}>
+                        <Text style={styles.TextStyles}>Nick</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.ListItem}>
+                    <View style={styles.ListItemContent}>
+                        <Text style={styles.TextStyles}>Nick</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.ListItem}>
+                    <View style={styles.ListItemContent}>
+                        <Text style={styles.TextStyles}>Nick</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.ListItem}>
+                    <View style={styles.ListItemContent}>
+                        <Text style={styles.TextStyles}>Nick</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.ListItem}>
+                    <View style={styles.ListItemContent}>
+                        <Text style={styles.TextStyles}>Nick</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.ListItem}>
+                    <View style={styles.ListItemContent}>
+                        <Text style={styles.TextStyles}>Nick</Text>
+                    </View>
+                </TouchableOpacity>
+
+
+            </ScrollView>
+        </SafeAreaView>
     )
 }

@@ -1,7 +1,9 @@
-import { Text } from 'react-native'
+import { Text, SafeAreaView } from 'react-native'
 
 export const QRCode = () => {
     return (
-        <Text> QRCode </Text>
+        <SafeAreaView>
+            <Text> QRCode </Text>
+        </SafeAreaView>
     )
 }

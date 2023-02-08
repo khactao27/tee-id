@@ -1,8 +1,10 @@
-import { Text } from 'react-native'
+import { Text, SafeAreaView } from 'react-native'
 
 const Settings = () => {
     return (
-        <Text>Settings</Text>
+        <SafeAreaView>
+            <Text>Settings</Text>
+        </SafeAreaView>
     )
 }
 
