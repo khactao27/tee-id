@@ -23,6 +23,8 @@ const ItemDivider = () => {
     )
 }
 
+const DATA = []
+
 export const Home = ({navigation}) => {
 
     const [modalVisible, setModalVisible] = useState(false);

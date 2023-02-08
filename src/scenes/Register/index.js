@@ -45,7 +45,7 @@ export const Register = ({ navigation }) => {
                             onChangeText={(nick) => setNick(nick)}
                             placeholder='Enter your nick name'
                             underlineColorAndroid='#f000'
-                            placeholderTextColor='#8b9cbb5'
+                            placeholderTextColor='#8b9cb5'
                             blurOnSubmit={false}
                         />
                     </View>
@@ -55,7 +55,7 @@ export const Register = ({ navigation }) => {
                             onChangeText={(email) => setEmail(email)}
                             placeholder='Enter your email'
                             underlineColorAndroid='#f000'
-                            placeholderTextColor='#8b9cbb5'
+                            placeholderTextColor='#8b9cb5'
                             keyboardType='email-address'
                             blurOnSubmit={false}
                         />
