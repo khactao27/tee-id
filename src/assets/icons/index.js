@@ -3,5 +3,7 @@ export default {
     direction: require('./direction.png'),
     home: require('./home.png'),
     qrCode: require('./qr-code.png'),
-    searchSymbol: require('./search-symbol.png')
+    searchSymbol: require('./search-symbol.png'),
+    user: require('./user.png'),
+    userFocus: require('./user-focus.png')
 }

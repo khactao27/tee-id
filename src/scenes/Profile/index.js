@@ -12,6 +12,7 @@ import {
 } from 'react-native'
 
 import { BottomSheetModal } from '@gorhom/bottom-sheet'
+import { MaterialIcon } from '@components/Icon'
 
 import { useState, useRef, useMemo, useEffect } from 'react'
 import styles from './styles'
@@ -22,10 +23,13 @@ export const Profile = ({ navigation }) => {
     useEffect(() => {
         navigation.setOptions({
             headerRight: () => (
-                <Button
-                    onPress={handlePresentModalPress}
-                    title="Info"
-                />
+                <TouchableOpacity onPress={handlePresentModalPress}>
+                    <MaterialIcon
+                        name='menu'
+                        size='extraLarge'
+                        color='black'
+                    />
+                </TouchableOpacity>
             ),
         })
     })
