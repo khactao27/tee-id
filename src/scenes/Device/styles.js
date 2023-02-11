@@ -20,17 +20,20 @@ export default StyleSheet.create({
         paddingRight: '5%'
     },
     modalBottomHeader: {
-        flex: 1
+        flex: 1,
+        alignSelf: 'center'
     },
     modalBottomBody: {
         flex: 10
     },
     modalBodyRow: {
+        paddingTop: "5%",
         flexDirection: 'row'
     },
     modalBottomFoot: {
         flex: 1,
         flexDirection: 'row',
+        alignSelf: 'center'
     },
     button: {
         borderRadius: 20,

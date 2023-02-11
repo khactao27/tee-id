@@ -10,6 +10,7 @@ import {
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import images from '@assets/images'
 import { BottomSheetModal } from '@gorhom/bottom-sheet'
+import MapView from 'react-native-maps'
 
 import styles from './styles'
 
@@ -115,11 +116,23 @@ const Devices = ({ navigation }) => {
                             <View style={styles.modalBodyRow}>
                                 <Text>Vị trí thiết bị.</Text>
                             </View>
+
+                            {/* Google Map*/}
+                            {/* <View>
+                                <MapView
+                                    initialRegion={{
+                                        latitude: 37.78825,
+                                        longitude: -122.4324,
+                                        latitudeDelta: 0.0922,
+                                        longitudeDelta: 0.0421,
+                                    }}
+                                />
+                            </View> */}
                         </ScrollView>
                     </View>
                     <View style={styles.modalBottomFoot}>
                         <TouchableOpacity
-                            style={{ flex: 1, alignContent: 'center' }}
+                            style={{ flex: 1 }}
                             onPress={allowAccess}>
                             <Text>Cho phep</Text>
                         </TouchableOpacity>
@@ -134,7 +147,6 @@ const Devices = ({ navigation }) => {
                 </View>
             </BottomSheetModal>
         </>
-
     )
 }
 

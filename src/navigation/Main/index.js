@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import Ionicons from 'react-native-vector-icons/Ionicons'
 import { Home } from '@scenes/Home'
 import { Profile } from '@scenes/Profile'
 import { Devices } from '@scenes/Device'
 import { QRCode } from '@scenes/QRCode'
 import { Button } from 'react-native'
+import { MaterialIcon } from '@components/Icon'
 // import { Notification } from '@scenes/Notification'
 
 
@@ -26,7 +26,8 @@ const MainTab = () => {
                     }
 
                     // You can return any component that you like here!
-                    return <Ionicons name={iconName} size={size} color={color} />;
+                    // return <Ionicons name={iconName} size={size} color={color} />;
+                    return <MaterialIcon name='home' size='extraLarge' color="purple" />
                 },
                 tabBarActiveTintColor: 'tomato',
                 tabBarInactiveTintColor: 'gray'
