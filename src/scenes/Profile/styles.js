@@ -5,7 +5,7 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundColor: 'white',
+        backgroundColor: '#f2f2f2',
         padding: 200,
         alignContent: 'center',
         margin: 2,
@@ -37,6 +37,9 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
+    },
+    bottomSheet: {
+        height: '100%',
     },
     TextStyles: {
         padding: 10,

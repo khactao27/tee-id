@@ -54,4 +54,8 @@ export default StyleSheet.create({
         marginBottom: 15,
         textAlign: 'center',
     },
+    contentContainer: {
+        flex: 1,
+        alignItems: 'center',
+    },
 })

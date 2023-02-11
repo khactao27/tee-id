@@ -41,12 +41,6 @@ const MainTab = () => {
                     title: 'Profile',
                     headerTitle: 'Dương Khắc Tạo',
                     headerShown: true,
-                    headerRight: () => (
-                        <Button
-                            onPress={() => alert('This is a button!')}
-                            title="Info"
-                        />
-                    ),
                 }}
                 name="Profile"
                 component={Profile}
