@@ -4,6 +4,7 @@ import { Home } from '@scenes/Home'
 import { Profile } from '@scenes/Profile'
 import { Devices } from '@scenes/Device'
 import { QRCode } from '@scenes/QRCode'
+import { Button } from 'react-native'
 // import { Notification } from '@scenes/Notification'
 
 
@@ -32,10 +33,24 @@ const MainTab = () => {
                 headerShown: false
             })}>
             <Tab.Screen options={{ tabBarBadge: 3, title: 'Home' }} name="Home" component={Home} />
-            <Tab.Screen options={{title: 'Session'}} name="Devices" component={Devices}/>
+            <Tab.Screen options={{ title: 'Session' }} name="Devices" component={Devices} />
             <Tab.Screen options={{ title: 'QRCode' }} name="QRCode" component={QRCode} />
             {/* <Tab.Screen options={{ title: "Notification" }} name="Notification" component={Notification} /> */}
-            <Tab.Screen options={{ title: "Profile", headerShown: true }} name="Profile" component={Profile} />
+            <Tab.Screen
+                options={{
+                    title: 'Profile',
+                    headerTitle: 'Dương Khắc Tạo',
+                    headerShown: true,
+                    headerRight: () => (
+                        <Button
+                            onPress={() => alert('This is a button!')}
+                            title="Info"
+                        />
+                    ),
+                }}
+                name="Profile"
+                component={Profile}
+            />
             {/* <Tab.Screen options={{ title: "Settings" }} name="Settings" component={Settings} /> */}
         </Tab.Navigator>
     )
