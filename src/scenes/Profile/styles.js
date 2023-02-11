@@ -40,6 +40,20 @@ export default StyleSheet.create({
     },
     bottomSheet: {
         height: '100%',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        flexDirection: 'column'
+    },
+    rowBottomSheet: {
+        width: '100%',
+        backgroundColor: '#d9d9d9',
+        flexDirection: 'row',
+        padding: '3%',
+        marginTop: '1%',
+        borderRadius: 10
+    },
+    icon: {
+
     },
     TextStyles: {
         padding: 10,

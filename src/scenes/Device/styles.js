@@ -8,42 +8,34 @@ export default StyleSheet.create({
 
     },
     deviceItem: {
-
+        marginTop: '1%',
+        padding: 20,
+        backgroundColor: '#ffddcc',
+        borderRadius: 10
     },
-    modal: {
-
-    },
-    centeredView: {
+    modalBottom: {
+        flexDirection: 'column',
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 22,
+        paddingLeft: '5%',
+        paddingRight: '5%'
     },
-    modalView: {
-        margin: 20,
-        backgroundColor: 'white',
-        borderRadius: 20,
-        padding: 35,
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
+    modalBottomHeader: {
+        flex: 1
+    },
+    modalBottomBody: {
+        flex: 10
+    },
+    modalBodyRow: {
+        flexDirection: 'row'
+    },
+    modalBottomFoot: {
+        flex: 1,
+        flexDirection: 'row',
     },
     button: {
         borderRadius: 20,
         padding: 10,
         elevation: 2,
-    },
-    buttonOpen: {
-        backgroundColor: '#F194FF',
-    },
-    buttonClose: {
-        backgroundColor: '#2196F3',
     },
     textStyle: {
         color: 'white',

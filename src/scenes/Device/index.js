@@ -4,9 +4,7 @@ import {
     Text,
     View,
     ScrollView,
-    TextInput,
     Image,
-    Modal,
     Pressable
 } from 'react-native'
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
@@ -48,11 +46,7 @@ const Devices = ({ navigation }) => {
                         device => (
                             <TouchableOpacity
                                 id={device}
-                                style={{
-                                    padding: 20,
-                                    backgroundColor: '#ffddcc',
-                                    borderRadius: 10
-                                }}
+                                style={styles.deviceItem}
                                 onPress={handlePresentModalPress}>
                                 {/* <Spacer/> */}
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -74,48 +68,6 @@ const Devices = ({ navigation }) => {
                     ) : (<Text>Tài khoản chưa chia sẻ thông tin với nền tảng nào</Text>)}
 
                 </ScrollView>
-
-                <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={modalVisible}
-                    onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
-                        setModalVisible(!modalVisible);
-                    }}>
-                    <View style={styles.centeredView}>
-                        <View style={styles.modalView}>
-                            <View style={{ flexDirection: 'row-reverse', justifyContent: 'flex-end' }}>
-                                <TouchableOpacity
-                                    onPress={() => setModalVisible(!modalVisible)}
-                                >
-                                    <Text>X</Text>
-                                </TouchableOpacity>
-                            </View>
-                            <Text style={styles.modalText}>Yêu cầu chia sẻ thông tin</Text>
-                            <View>
-                                <Text>Tên thiết bị: Ipad</Text>
-                                <Text>Thời gian yêu cầu: </Text>
-                                <Text>Location: </Text>
-                                <Text>Trang thai: Cho phep</Text>
-                                <Text>Ung dung yeu cau</Text>
-                            </View>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Pressable
-                                    style={[styles.button, styles.buttonClose]}
-                                    onPress={() => allowAccess()}>
-                                    <Text style={styles.textStyle}>Cho phép</Text>
-                                </Pressable>
-
-                                <Pressable
-                                    style={[styles.button, styles.buttonClose]}
-                                    onPress={() => rejectAccess()}>
-                                    <Text style={styles.textStyle}>Từ chối</Text>
-                                </Pressable>
-                            </View>
-                        </View>
-                    </View>
-                </Modal>
             </SafeAreaView>
             <BottomSheetModal
                 ref={bottomSheetModalRef}
@@ -123,8 +75,62 @@ const Devices = ({ navigation }) => {
                 snapPoints={snapPoints}
                 onChange={handleSheetChanges}
             >
-                <View style={styles.contentContainer}>
-                    <Text>Hello BottomSheetModal</Text>
+                <View style={styles.modalBottom}>
+                    <View style={styles.modalBottomHeader}>
+                        <Text>
+                            Thông tin yêu cầu truy cập
+                        </Text>
+                    </View>
+                    <View style={styles.modalBottomBody}>
+                        <ScrollView>
+                            <View style={styles.modalBodyRow}>
+                                <Text>Tên thiết bị: </Text>
+                                <Text>Iphone XS Max</Text>
+                            </View>
+
+                            <View style={styles.modalBodyRow}>
+                                <Text>Thời gian yêu cầu: </Text>
+                                <Text>12h00</Text>
+                            </View>
+
+                            <View style={styles.modalBodyRow}>
+                                <Text>Loại thiết bị: </Text>
+                                <Text>Browser</Text>
+                            </View>
+
+                            <View style={styles.modalBodyRow}>
+                                <Text>Ứng dụng yêu cầu: </Text>
+                                <Text>Wallet Token</Text>
+                            </View>
+
+                            <View style={styles.modalBodyRow}>
+                                <Text>Trạng thái:</Text>
+                                <Text>Đã cấp quyền</Text>
+                            </View>
+
+                            <View style={styles.modalBodyRow}>
+                                <Text>Hiệu lực: Từ ngày - ngày: </Text>
+                            </View>
+
+                            <View style={styles.modalBodyRow}>
+                                <Text>Vị trí thiết bị.</Text>
+                            </View>
+                        </ScrollView>
+                    </View>
+                    <View style={styles.modalBottomFoot}>
+                        <TouchableOpacity
+                            style={{ flex: 1, alignContent: 'center' }}
+                            onPress={allowAccess}>
+                            <Text>Cho phep</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                            style={{ flex: 1 }}
+                            onPress={rejectAccess}
+                        >
+                            <Text>Tu choi</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </BottomSheetModal>
         </>

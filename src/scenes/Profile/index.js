@@ -19,13 +19,7 @@ import images from '@assets/images'
 
 export const Profile = ({ navigation }) => {
 
-    const [textValue, setTextValue] = useState('')
-    const [modalVisible, setModalVisible] = useState(false)
-    const refInputs = useRef([textValue])
-    const bottomSheetModalRef = useRef(null)
-    const snapPoints = useMemo(() => ['25%', '50%', '75'], [])
-
-    const addSettings = async () => {
+    useEffect(() => {
         navigation.setOptions({
             headerRight: () => (
                 <Button
@@ -34,7 +28,13 @@ export const Profile = ({ navigation }) => {
                 />
             ),
         })
-    }
+    })
+
+    const [textValue, setTextValue] = useState('')
+    const [modalVisible, setModalVisible] = useState(false)
+    const refInputs = useRef([textValue])
+    const bottomSheetModalRef = useRef(null)
+    const snapPoints = useMemo(() => ['25%', '50%', '75'], [])
 
     const handlePresentModalPress = async () => {
         bottomSheetModalRef.current?.present()
@@ -109,7 +109,7 @@ export const Profile = ({ navigation }) => {
                     borderRadius: 10
                 }}>
                     <TouchableOpacity
-                        onPress={addSettings}
+                        onPress={() => setModalVisible(true)}
                     >
                         <Text>Edit Profile</Text>
                     </TouchableOpacity>
@@ -218,9 +218,56 @@ export const Profile = ({ navigation }) => {
                 index={2}
                 snapPoints={snapPoints}>
                 <View style={styles.bottomSheet}>
-                    <Text>
-                        Setting modal
-                    </Text>
+                    <TouchableOpacity
+                        onPress={() => { }}
+                        style={{ flexDirection: 'column' }}>
+                        <View style={styles.rowBottomSheet}>
+                            <Text>Icon</Text>
+                            <Text>Setting</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={styles.rowBottomSheet}>
+                            <Text>IconQR</Text>
+                            <Text>QR Code</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={styles.rowBottomSheet}>
+                            <Text>IconQR</Text>
+                            <Text>Your Activity</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={styles.rowBottomSheet}>
+                            <Text>IconQR</Text>
+                            <Text>Privacy & Security</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={styles.rowBottomSheet}>
+                            <Text>Icon Logout: </Text>
+                            <Text>Logout</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={styles.rowBottomSheet}>
+                            <Text>Icon Logout: </Text>
+                            <Text>Switch appearance</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={styles.rowBottomSheet}>
+                            <Text>IconQR</Text>
+                            <Text>Cancel</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </BottomSheetModal>
         </>

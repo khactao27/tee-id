@@ -29,11 +29,10 @@ const MainTab = () => {
                     return <Ionicons name={iconName} size={size} color={color} />;
                 },
                 tabBarActiveTintColor: 'tomato',
-                tabBarInactiveTintColor: 'gray',
-                headerShown: false
+                tabBarInactiveTintColor: 'gray'
             })}>
             <Tab.Screen options={{ tabBarBadge: 3, title: 'Home' }} name="Home" component={Home} />
-            <Tab.Screen options={{ title: 'Session' }} name="Devices" component={Devices} />
+            <Tab.Screen options={{ title: 'Session', headerTitle: 'Yêu cầu truy cập', headerShown: true }} name="Devices" component={Devices} />
             <Tab.Screen options={{ title: 'QRCode' }} name="QRCode" component={QRCode} />
             {/* <Tab.Screen options={{ title: "Notification" }} name="Notification" component={Notification} /> */}
             <Tab.Screen
@@ -41,6 +40,12 @@ const MainTab = () => {
                     title: 'Profile',
                     headerTitle: 'Dương Khắc Tạo',
                     headerShown: true,
+                    headerRight: () => (
+                        <Button
+                            onPress={() => alert('This is a button!')}
+                            title="Info"
+                        />
+                    ),
                 }}
                 name="Profile"
                 component={Profile}
