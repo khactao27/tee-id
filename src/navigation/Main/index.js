@@ -3,7 +3,7 @@ import { Home } from '@scenes/Home'
 import { Profile } from '@scenes/Profile'
 import { Devices } from '@scenes/Device'
 import { QRCode } from '@scenes/QRCode'
-import { Button, Image } from 'react-native'
+import { Button, Image, Text } from 'react-native'
 import icons from '@assets/icons'
 import { MaterialIcon } from '@components/Icon'
 import { Notification } from '@scenes/Notification'
@@ -15,21 +15,21 @@ const MainTab = () => {
     return (
         <Tab.Navigator initialRouteName='Home'
             screenOptions={({ route }) => ({
+                tabBarLabel: () => null,
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
                     // change icon nav bar
                     if (route.name === 'Home') {
-                        return <Image source={icons.home} style={{width: 30, height: 30}}/>
+                        return <Image source={ focused ? icons.homeFocus : icons.home } style={{width: 30, height: 30}}/>
                     } else if (route.name === 'Profile') {
-
-                        return focused ? <Image source={icons.userFocus} style={{width: 30, height: 30}}/> : <Image source={icons.user} style={{width: 30, height: 30}}/>
+                        return <Image source={ focused ? icons.userFocus : icons.user } style={{width: 30, height: 30}}/>
                     } else if (route.name === 'QRCode') {
-                        return <Image source={icons.qrCode} style={{width: 30, height: 30}}/>
+                        return <Image source={focused ? icons.qrCodeFocus : icons.qrCode} style={{width: 30, height: 30}}/>
                     } else if (route.name === 'Notification') {
-                        return <Image source={icons.bell} style={{width: 30, height: 30}}/>
+                        return <Image source={ focused ? icons.bellFocus : icons.bell} style={{width: 30, height: 30}}/>
                     }
                     else {
-                        return <Image source={icons.searchSymbol} style={{width: 30, height: 30}}/>
+                        return <Image source={ focused ? icons.searchSymbolFocus : icons.searchSymbol } style={{width: 30, height: 30}}/>
                     }
 
                     // You can return any component that you like here!
