@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { SafeAreaView, Modal, Pressable, FlatList, View, Text, Alert } from 'react-native'
+import { SafeAreaView, Modal, Pressable, FlatList, View, Text, Alert, TextInput, ScrollView, Image, TouchableOpacity } from 'react-native'
 import styles from './styles'
-
+import icons from '@assets/icons'
+import { useEffect } from 'react'
 
 const Item = ({ title, setModalVisible }) => {
     return (
@@ -23,40 +24,49 @@ const ItemDivider = () => {
     )
 }
 
-const DATA = []
+export const Home = ({ navigation }) => {
 
-export const Home = ({navigation}) => {
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <TouchableOpacity >
+                    <Image source={icons.bell} style={{ width: 30, height: 30, marginRight: '5%' }}/>
+                </TouchableOpacity>
+            ),
+        })
+    })
 
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
         <SafeAreaView style={styles.container}>
-            <FlatList
-                data={DATA}
-                renderItem={({ item }) => <Item title={item.title} setModalVisible={setModalVisible} />}
-                keyExtractor={item => item.id}
-                ItemSeparatorComponent={ItemDivider}
-            />
+            <View style={styles.header}>
+                <Image source={icons.avatarDefault} style={styles.avatar} />
+                <TextInput
+                    placeholder='do something?'
+                    style={styles.inputPost}
+                    onFocus={() => {
+                        console.log("Open modal create Post")
+                    }}
+                />
+                <TouchableOpacity style={styles.postButton}>
+                    <Text>X</Text>
+                </TouchableOpacity>
+            </View>
 
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    Alert.alert('Modal has been closed.');
-                    setModalVisible(!modalVisible);
-                }}>
-                <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-                        <Text style={styles.modalText}>Hello World!</Text>
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => setModalVisible(!modalVisible)}>
-                            <Text style={styles.textStyle}>Hide Modal</Text>
-                        </Pressable>
+            <ScrollView style={styles.content}>
+                <View style={styles.post}>
+                    <View style={styles.postHeader}>
+                        <Text>Post Header</Text>
+                    </View>
+                    <View style={styles.postBody}>
+                        <Text>Post Data</Text>
+                    </View>
+                    <View style={styles.postAction}>
+                        <Text>Post Actions</Text>
                     </View>
                 </View>
-            </Modal>
+            </ScrollView>
         </SafeAreaView>
     )
 }

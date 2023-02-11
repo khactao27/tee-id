@@ -8,6 +8,41 @@ export default StyleSheet.create({
         marginLeft: 10,
         marginRight: 10
     },
+    header: {
+        marginTop: '2%',
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    avatar: {
+        flex: 1,
+        width: 60,
+        height: 60,
+        borderRadius: 50,
+        borderColor: '#a6a6a6',
+        borderWidth: 2
+    },
+    content: {
+        marginTop: '2%'
+    },
+    inputPost: {
+        flex: 4
+    },
+    postButton: {
+        flex: 1,
+        alignItems: 'center'
+    },
+    post: {
+        backgroundColor: '#a6a6a6'
+    },
+    postHeader: {
+
+    },
+    postBody: {
+
+    },
+    postActions: {
+
+    },
     item: {
         backgroundColor: "#99c2ff",
         padding: 20,

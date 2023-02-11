@@ -50,10 +50,14 @@ export default StyleSheet.create({
         flexDirection: 'row',
         padding: '3%',
         marginTop: '1%',
-        borderRadius: 10
+        borderRadius: 10,
+        justifyContent: 'flex-start',
+        alignItems: 'center'
     },
     icon: {
-
+        width: 30,
+        height: 30,
+        marginRight: '5%'
     },
     TextStyles: {
         padding: 10,

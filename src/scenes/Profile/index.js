@@ -17,6 +17,7 @@ import { MaterialIcon } from '@components/Icon'
 import { useState, useRef, useMemo, useEffect } from 'react'
 import styles from './styles'
 import images from '@assets/images'
+import icons from '@assets/icons'
 
 export const Profile = ({ navigation }) => {
 
@@ -226,49 +227,53 @@ export const Profile = ({ navigation }) => {
                         onPress={() => { }}
                         style={{ flexDirection: 'column' }}>
                         <View style={styles.rowBottomSheet}>
-                            <Text>Icon</Text>
+                            <Image source={icons.settings} style={styles.icon} />
                             <Text>Setting</Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={styles.rowBottomSheet}>
-                            <Text>IconQR</Text>
+                            <Image source={icons.qrCode} style={styles.icon} />
                             <Text>QR Code</Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={styles.rowBottomSheet}>
-                            <Text>IconQR</Text>
+                            <Image source={icons.restore} style={styles.icon} />
                             <Text>Your Activity</Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={styles.rowBottomSheet}>
-                            <Text>IconQR</Text>
+                            <Image source={icons.privacy} style={styles.icon} />
                             <Text>Privacy & Security</Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={styles.rowBottomSheet}>
-                            <Text>Icon Logout: </Text>
-                            <Text>Logout</Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <View style={styles.rowBottomSheet}>
-                            <Text>Icon Logout: </Text>
+                            <Image source={icons.theme} style={styles.icon} />
                             <Text>Switch appearance</Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={styles.rowBottomSheet}>
-                            <Text>IconQR</Text>
+                            <Image source={icons.logout} style={styles.icon} />
+                            <Text>Logout</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        onPress={() => {
+                            bottomSheetModalRef.current?.dismiss()
+                        }}
+                    >
+                        <View style={styles.rowBottomSheet}>
+                            <Image source={icons.cancel} style={styles.icon} />
                             <Text>Cancel</Text>
                         </View>
                     </TouchableOpacity>

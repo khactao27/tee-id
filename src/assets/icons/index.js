@@ -15,4 +15,19 @@ export default {
 
     user: require('./user.png'),
     userFocus: require('./user-focus.png'),
+
+    logout: require('./logout.png'),
+    logoutFocus: require('./logout-focus.png'),
+
+    application: require('./application.png'),
+    applicationFocus: require('./application-focus.png'),
+
+    settings: require('./settings.png'),
+
+    theme: require('./theme.png'),
+    restore: require('./restore.png'),
+    privacy: require('./privacy.png'),
+    cancel: require('./cancel.png'),
+
+    avatarDefault: require('./avatar-default.png')
 }

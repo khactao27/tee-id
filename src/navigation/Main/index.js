@@ -27,6 +27,8 @@ const MainTab = () => {
                         return <Image source={focused ? icons.qrCodeFocus : icons.qrCode} style={{width: 30, height: 30}}/>
                     } else if (route.name === 'Notification') {
                         return <Image source={ focused ? icons.bellFocus : icons.bell} style={{width: 30, height: 30}}/>
+                    } else if(route.name === 'Application') {
+                        return <Image source={ focused ? icons.applicationFocus : icons.application} style={{width: 30, height: 30}}/>
                     }
                     else {
                         return <Image source={ focused ? icons.searchSymbolFocus : icons.searchSymbol } style={{width: 30, height: 30}}/>
@@ -40,10 +42,10 @@ const MainTab = () => {
                 tabBarActiveTintColor: 'tomato',
                 tabBarInactiveTintColor: 'gray'
             })}>
-            <Tab.Screen options={{ title: 'Home' }} name="Home" component={Home} />
-            <Tab.Screen options={{ title: 'Search', headerTitle: 'Yêu cầu truy cập', headerShown: true }} name="Devices" component={Devices} />
-            <Tab.Screen options={{ title: 'QRCode' }} name="QRCode" component={QRCode} />
-            <Tab.Screen options={{ title: "Notification", tabBarBadge: 3 }} name="Notification" component={Notification} />
+            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen options={{headerTitle: 'Yêu cầu truy cập', headerShown: true }} name="Devices" component={Devices} />
+            <Tab.Screen name="QRCode" component={QRCode} />
+            <Tab.Screen name="Application" options={{ tabBarBadge: 5 }} component={Notification} />
             <Tab.Screen
                 options={{
                     headerTitle: 'Dương Khắc Tạo',
