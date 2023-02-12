@@ -83,90 +83,55 @@ export const Profile = ({ navigation }) => {
         )
     }
 
+    var secretInfos = [
+        {
+            field: 'Licences Code',
+            value: '122322312'
+        }
+    ]
+
     return (
         <>
             <SafeAreaView style={styles.container}>
-                <View style={{ flexDirection: 'row' }}>
+                <View style={styles.basicInfo}>
                     <View style={{ padding: 10 }}>
                         <Image source={images.tee} style={styles.Image} />
                         <Text style={{ flex: 1, fontSize: 20 }}>Nick Name</Text>
                     </View>
                     <View>
                         <View>
-                            <Text style={styles.TextStyles}>Tao</Text>
-                            <Text style={styles.TextStyles}>gender: Nam</Text>
-                            <Text style={styles.TextStyles}>birthday: 20183825</Text>
+                            <Text style={styles.basicInfoRow}>Tao</Text>
+                            <Text style={styles.basicInfoRow}>gender: Nam</Text>
+                            <Text style={styles.basicInfoRow}>birthday: 20183825</Text>
                         </View>
                     </View>
                 </View>
-                <View style={{ padding: 10 }}>
+                <View style={styles.asset}>
                     <View style={{ flexDirection: 'row' }}>
                         <Text>Tổng tài sản: </Text>
                         <Text>ETH: 10.12</Text>
                     </View>
                 </View>
-                <View style={{
-                    backgroundColor: '#b3f0ff',
-                    alignContent: 'center',
-                    alignItems: 'center',
-                    margin: 10,
-                    padding: 5,
-                    borderRadius: 10
-                }}>
+                <View style={styles.editButton}>
                     <TouchableOpacity
                         onPress={() => setModalVisible(true)}
                     >
                         <Text>Edit Profile</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ padding: 15 }}>
+                <View style={styles.secretInfo}>
                     <Text>Thông tin bí mật: (được mã hoá)</Text>
                     <ScrollView>
-                        <View>
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>ID: </Text>
-                                <Text>122338778</Text>
-                            </View>
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>LicenseCode: </Text>
-                                <Text>Vietnamese</Text>
-                            </View>
-
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>LicenseCode: </Text>
-                                <Text>Vietnamese</Text>
-                            </View>
-
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>LicenseCode: </Text>
-                                <Text>Vietnamese</Text>
-                            </View>
-
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>LicenseCode: </Text>
-                                <Text>Vietnamese</Text>
-                            </View>
-
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>LicenseCode: </Text>
-                                <Text>Vietnamese</Text>
-                            </View>
-
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>LicenseCode: </Text>
-                                <Text>Vietnamese</Text>
-                            </View>
-
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>LicenseCode: </Text>
-                                <Text>Vietnamese</Text>
-                            </View>
-
-                            <View style={{ flexDirection: 'row', backgroundColor: '#f2f2f2', paddingTop: 15, paddingBottom: 15 }}>
-                                <Text>LicenseCode: </Text>
-                                <Text>Vietnamese</Text>
-                            </View>
-                        </View>
+                        {
+                            secretInfos.map(item => (
+                                <View>
+                                    <View style={styles.secretInfoRow}>
+                                        <Text>{item.field}</Text>
+                                        <Text>{item.value}</Text>
+                                    </View>
+                                </View>
+                            ))
+                        }
                     </ScrollView>
                 </View>
 

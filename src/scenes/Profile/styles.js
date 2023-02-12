@@ -6,10 +6,41 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         backgroundColor: '#f2f2f2',
-        padding: 200,
         alignContent: 'center',
         margin: 2,
-        marginTop: 5
+        marginTop: 5,
+        marginLeft: '2%'
+    },
+    basicInfo: {
+        flex: 3,
+        flexDirection: 'row'
+    },
+    asset: {
+        flex: 0.5
+    },
+    editButton: {
+        backgroundColor: '#b3f0ff',
+        alignContent: 'center',
+        alignItems: 'center',
+        margin: 10,
+        padding: 5,
+        borderRadius: 10,
+        flex: 0.5
+    },
+    secretInfo: {
+        flex: 8
+    },
+    secretInfoRow: {
+        flexDirection: 'row',
+        backgroundColor: '#f2f2f2',
+        paddingTop: 15,
+        paddingBottom: 15
+    },
+    basicInfoRow: {
+        padding: 10,
+        fontSize: 20,
+        color: '#676767ff',
+        fontWeight: '400'
     },
     input: {
         width: 200,
@@ -58,12 +89,6 @@ export default StyleSheet.create({
         width: 30,
         height: 30,
         marginRight: '5%'
-    },
-    TextStyles: {
-        padding: 10,
-        fontSize: 20,
-        color: '#676767ff',
-        fontWeight: '400'
     },
     centeredView: {
         flex: 1,

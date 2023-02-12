@@ -13,7 +13,7 @@ import { useState } from 'react'
 import styles from './styles'
 import icons from '@assets/icons'
 
-const data = ["Tim nha", 2, 3, 4, 5]
+const data = []
 export const Notification = () => {
 
     const [modalVisible, setModalVisible] = useState(false);
