@@ -3,12 +3,14 @@ export default {
     bellFocus: require('./bell-ring-focus.png'),
 
     direction: require('./direction.png'),
+    directionIcon: require('./direction-icon.png'),
 
     home: require('./home.png'),
     homeFocus: require('./home-focus.png'),
 
     qrCode: require('./qr-code-scan.png'),
     qrCodeFocus: require('./qr-code-scan-focus.png'),
+    carbonQRCode: require('./carbon_qr-code.png'),
 
     searchSymbol: require('./search.png'),
     searchSymbolFocus: require('./search-focus.png'),

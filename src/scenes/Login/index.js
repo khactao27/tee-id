@@ -1,77 +1,63 @@
-import { KeyboardAvoidingView, TouchableOpacity, SafeAreaView, ScrollView, Image, Text, TextInput, View } from 'react-native'
+import { KeyboardAvoidingView, ImageBackground, TouchableOpacity, SafeAreaView, ScrollView, Image, Text, TextInput, View } from 'react-native'
 import styles from './styles'
+import icons from '@assets/icons'
 import images from '@assets/images'
 import { useState } from 'react'
 
-const Login = ({navigation}) => {
-
-    const [UserEmail, setUserEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [loading, setLoading] = useState(true)
-    const [ errorText, setErrorText] = useState('')
+const Login = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView
-                keyboardShouldPersistTaps='handled'
-                contentContainerStyle={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                }}>
-                <View>
-                    <KeyboardAvoidingView>
-                        <View style={{ alignItems: 'center' }}>
-                            <Image source={images.logo}
-                                style={{
-                                    width: '50%',
-                                    height: 100,
-                                    resizeMode: 'contain',
-                                    margin: 30,
-                                }} />
+            <View style={{ flex: 1 }}>
+                <View style={styles.header}>
+                    <ImageBackground source={images.illustration} style={{
+                        flex: 1,
+                        alignItems: 'center',
+                        flexDirection: 'column-reverse'
+                    }} resizeMode='cover'>
+                        <View>
+                            <Text>Wellcome To</Text>
+                            <Text> Tee ID</Text>
+                            <Text>Best app for Info Security</Text>
+                            <Text>Join For Free</Text>
                         </View>
-                        <View style={styles.section}>
-                            <TextInput style={styles.input}
-                                onChangeText={(userEmail) => setUserEmail(userEmail)}
-                                placeholder='User Email'
-                                placeholderTextColor='#8b9cb5'
-                                autoCapitalize='none'
-                                returnKeyType='next' />
-                        </View>
-                        <View style={styles.section}>
-                            <TextInput style={styles.input}
-                                onChangeText={(password) => setPassword(password)}
-                                placeholder='Enter password'
-                                placeholderTextColor='#8b9cb5'
-                                keyboardType='default'
-                                secureTextEntry={true}
-                                returnKeyType='next'
-                            />
-                        </View>
-
-                        {errorText != '' ? (
-                            <Text style={styles.errorText}></Text>
-                        ) : null}
-
-                        <TouchableOpacity style={styles.button}
-                            activeOpacity={0.5}
-                            onPress={() => { }}>
-                            <Text style={styles.buttonText}>LOGIN</Text>
-                        </TouchableOpacity>
-
-                        <Text
-                            style={styles.registerText}
-                            onPress={() => navigation.navigate('Register')}>
-                            New Here ? Register
-                        </Text>
-                        <Text
-                            style={styles.registerText}
-                            onPress={() => navigation.navigate('MainTab')}>
-                            MainTab
-                        </Text>
-                    </KeyboardAvoidingView>
+                    </ImageBackground>
                 </View>
-            </ScrollView>
+
+                <View style={styles.body}>
+                    <View style={styles.buttonBox}>
+                        <TouchableOpacity style={styles.qrCodeBtn}>
+                            <Image source={icons.carbonQRCode} />
+                            <Text style={{
+                                paddingLeft: '5%',
+                                fontStyle: 'normal',
+                                fontWeight: 700,
+                                color: '#567DF4'
+                            }}>QR Code</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.navSignUpBtn}
+                            onPress={() => navigation.navigate('Register')}
+                        >
+                            <Text style={{
+                                fontStyle: 'normal',
+                                fontWeight: 700,
+                                color: '#FFFFFF',
+                                paddingRight: '5%'
+                            }}>Sign up </Text>
+                            <Image source={icons.directionIcon} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+                <View style={styles.footer}>
+                    <Text style={{
+                        fontStyle: 'normal',
+                        fontWeight: 400,
+                        color: '#1B1D28'
+                    }}>Licensed by @Linsuu</Text>
+                </View>
+            </View>
         </SafeAreaView>
     )
 }

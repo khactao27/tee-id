@@ -7,34 +7,68 @@ export default StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#f2f2f2',
         alignContent: 'center',
-        margin: 2,
-        marginTop: 5,
-        marginLeft: '2%'
+        margin: '2%',
+        borderRadius: 20
     },
     basicInfo: {
-        flex: 3,
+        flex: 4,
+        flexDirection: 'column',
+        borderRadius: 20,
+        backgroundColor: '#22215B',
+        marginBottom: '2%'
+    },
+    info: {
+        flex: 5,
         flexDirection: 'row'
     },
-    asset: {
-        flex: 0.5
-    },
     editButton: {
-        backgroundColor: '#b3f0ff',
+        flex: 1,
+        backgroundColor: 'white',
         alignContent: 'center',
         alignItems: 'center',
-        margin: 10,
-        padding: 5,
-        borderRadius: 10,
-        flex: 0.5
+        padding: 10,
+        borderRadius: 10
+    },
+    basicInfoRow: {
+        fontWeight: 'bold',
+        color: 'white',
+        fontSize: 20
+    },
+    asset: {
+        flex: 2,
+        marginTop: '2%',
+        marginBottom: '5%',
+    },
+    tokens: {
+        flex: 2,
+        padding: 10,
+        borderRadius: 20,
+        backgroundColor: '#218CC0',
+        opacity: 0.5,
+        alignItems: 'center',
+        marginTop: '4%'
+    },
+    token: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        opacity: 2,
+        flexDirection: 'column'
     },
     secretInfo: {
-        flex: 8
+        marginTop: '2%',
+        flex: 8,
+        backgroundColor: '#FEEEEE',
+        borderRadius: 20
     },
     secretInfoRow: {
         flexDirection: 'row',
-        backgroundColor: '#f2f2f2',
         paddingTop: 15,
-        paddingBottom: 15
+        paddingBottom: 15,
+        fontWeight: 200,
+        borderWidth: 1,
+        borderRadius: 10,
+        marginBottom: '2%',
+        padding: '1%'
     },
     basicInfoRow: {
         padding: 10,
@@ -129,6 +163,7 @@ export default StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',
+        fontSize: 10
     },
     modalText: {
         marginBottom: 15,

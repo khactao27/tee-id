@@ -41,7 +41,7 @@ export const Home = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
-                <Image source={icons.avatarDefault} style={styles.avatar} />
+                <Image source={{uri: 'http://222.255.238.183:8010/uploads/tee-306348862_1180959729511317_2812908560085888436_n-1676240231351.jpg'}} style={styles.avatar} />
                 <TextInput
                     placeholder='do something?'
                     style={styles.inputPost}

@@ -1,144 +1,106 @@
-import images from '@assets/images'
 import { useState } from 'react'
-import { SafeAreaView, Text, Button, ScrollView, Image, View, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native'
+import {
+    SafeAreaView,
+    Text,
+    Button,
+    ScrollView,
+    Image,
+    View,
+    KeyboardAvoidingView,
+    TextInput,
+    TouchableOpacity,
+    ImageBackground
+} from 'react-native'
+
+import CheckBox from '@react-native-community/checkbox';
 import DatePicker from 'react-native-date-picker'
 import SelectDropdown from 'react-native-select-dropdown'
 import styles from './styles'
+import images from '@assets/images'
 
 export const Register = ({ navigation }) => {
 
-    const [nick, setNick] = useState('')
-    const [address, setAddress] = useState('')
-    const [email, setEmail] = useState('')
-    const [gender, setGender] = useState(0)
-    const [birthday, setBirthday] = useState('')
-    const [website, setWebsite] = useState('')
-    const [locale, setLocale] = useState('')
-    const [privateKey, setPrivateKey] = useState('')
-    const [loading, setLoading] = useState(false)
-    const [errorText, setErrorText] = useState('')
-    const [date, setDate] = useState(new Date())
-    const [open, setOpen] = useState(false)
+    const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
-    const locales = ['English', 'Vietnamese', 'Japanese']
+    const signUp = async () => {
+
+    }
 
     return (
         <SafeAreaView style={styles.container}>
-            <View>
-                <Image source={images.logo}
+            <View style={styles.header}>
+                <ImageBackground
+                    source={images.illustrationRegister}
                     style={{
-                        width: '50%',
-                        height: 100,
-                        resizeMode: 'contain',
-                        margin: 30
-                    }}
-                />
+                        flex: 1,
+                        alignItems: 'center',
+                        flexDirection: 'column-reverse'
+                    }} resizeMode='cover'>
+                </ImageBackground>
             </View>
-            <ScrollView keyboardShouldPersistTaps='handled'
-                contentContainerStyle={{
-                    justifyContent: 'center',
-                    alignContent: 'center'
-                }}>
-                <KeyboardAvoidingView enabled>
-                    <View style={styles.section}>
-                        <TextInput style={styles.input}
-                            onChangeText={(nick) => setNick(nick)}
-                            placeholder='Enter your nick name'
-                            underlineColorAndroid='#f000'
-                            placeholderTextColor='#8b9cb5'
-                            blurOnSubmit={false}
-                        />
+            <View style={styles.body}>
+                <View>
+                    <Text style={{
+                        fontStyle: 'normal',
+                        fontWeight: 700,
+                        color: '#12121D',
+                        fontSize: 28
+                    }}>Let's Get Started!</Text>
+                    <Text>Sign up with your infomation of fill form to continue</Text>
+                </View>
+                <ScrollView>
+                    <View>
+                        <View style={styles.inputBox}>
+                            <Text>Icon</Text>
+                            <TextInput placeholder='Email' />
+                        </View>
+
+                        <View style={styles.inputBox}>
+                            <Text>Icon</Text>
+                            <TextInput placeholder='Name' />
+                        </View>
+
+                        <View style={styles.inputBox}>
+                            <Text>Icon</Text>
+                            <Text>Gender</Text>
+                        </View>
+
+                        <View style={styles.inputBox}>
+                            <Text>Icon</Text>
+                            <TextInput placeholder='Address' />
+                        </View>
+
+                        <View style={styles.inputBox}>
+                            <Text>Icon: </Text>
+                            <TextInput placeholder='Date of birth' />
+                        </View>
                     </View>
-
-                    <View style={styles.section}>
-                        <TextInput style={styles.input}
-                            onChangeText={(email) => setEmail(email)}
-                            placeholder='Enter your email'
-                            underlineColorAndroid='#f000'
-                            placeholderTextColor='#8b9cb5'
-                            keyboardType='email-address'
-                            blurOnSubmit={false}
-                        />
-                    </View>
-
-                    <View style={styles.section}>
-                        <TextInput style={styles.input}
-                            onChangeText={(website) => setWebsite(website)}
-                            placeholder='Enter your website'
-                            blurOnSubmit={false}
-                        />
-                    </View>
-
-                    <View style={styles.section}>
-                        <TextInput style={styles.input}
-                            onChangeText={(locale) => setLocale(locale)}
-                            placeholder='Enter your locale'
-                            blurOnSubmit={false}
-                        />
-                    </View>
-
-                    <View style={styles.section}>
-                        <TextInput style={styles.input}
-                            onChangeText={(address) => setLocale(address)}
-                            placeholder='Enter your address'
-                            blurOnSubmit={false}
-                        />
-                    </View>
-
-                    <View style={styles.section}>
-                        <SelectDropdown
-                            data={locales}
-                            onSelect={(selectedItem, index) => {
-
-                            }}
-                            buttonTextAfterSelection={(selectedItem, index) => {
-                                // text represented after item is selected
-                                // if data array is an array of objects then return selectedItem.property to render after item is selected
-                                return selectedItem
-                            }}
-                            rowTextForSelection={(item, index) => {
-                                // text represented for each item in dropdown
-                                // if data array is an array of objects then return item.property to represent item in dropdown
-                                return item
-                            }}
-                        />
-                    </View>
-
-                    <View style={styles.section}>
-                        <Button style={styles.button} title="Open" onPress={() => setOpen(true)} />
-                        <DatePicker
-                            modal
-                            open={open}
-                            date={date}
-                            onConfirm={(date) => {
-                                setOpen(false)
-                                setDate(date)
-                            }}
-                            onCancel={() => {
-                                setOpen(false)
-                            }}
-                        />
-
-                    </View>
-                </KeyboardAvoidingView>
-            </ScrollView>
-            {errorText != '' ? (
-                <Text style={styles.errorText}>
-                    {errorText}
-                </Text>
-            ) : null}
-
-            <TouchableOpacity style={styles.button}
-                activeOpacity={0.5}
-                onPress={() => { }}>
-                <Text style={styles.buttonText}>REGISTER</Text>
-            </TouchableOpacity>
-
-            <Text
-                style={styles.loginText}
-                onPress={() => navigation.navigate('Login')}>
-                Already Account ? Login
-            </Text>
+                </ScrollView>
+                <View style={styles.inputBox}>
+                    <CheckBox
+                        disabled={false}
+                        value={toggleCheckBox}
+                        onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    />
+                    <Text>By Signing up, you agree to the&nbsp;
+                        <Text style={{ fontWeight: 'bold' }}>Terms of Service</Text>
+                        &nbsp;and&nbsp;
+                        <Text style={{ fontWeight: 'bold' }}>&nbsp;Privacy Policy</Text>
+                    </Text>
+                </View>
+            </View>
+            <View style={styles.footer}>
+                <TouchableOpacity
+                    onPress={signUp}
+                    style={styles.signUpBtn}
+                >
+                    <Text style={{
+                        fontStyle: 'normal',
+                        fontWeight: 900,
+                        color: '#FFFFFF'
+                    }}>Sign up</Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     )
 }

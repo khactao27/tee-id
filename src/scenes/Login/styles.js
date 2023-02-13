@@ -4,55 +4,46 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#307ecc',
         alignContent: 'center',
+        backgroundColor: 'white'
     },
-    section: {
-        flexDirection: 'row',
-        height: 40,
-        marginTop: 20,
-        marginLeft: 35,
-        marginRight: 35,
-        margin: 10,
+    header: {
+        flex: 9
     },
-    button: {
-        backgroundColor: '#7DE24E',
-        borderWidth: 0,
-        color: '#FFFFFF',
-        borderColor: '#7DE24E',
-        height: 40,
+    body: {
+        flex: 2,
+        flexDirection: 'column-reverse'
+    },
+    footer: {
+        flex: 2,
+        flexDirection: 'column-reverse',
         alignItems: 'center',
-        borderRadius: 30,
-        marginLeft: 35,
-        marginRight: 35,
-        marginTop: 20,
-        marginBottom: 25,
+     
     },
-    buttonText: {
-        color: '#FFFFFF',
-        paddingVertical: 10,
-        fontSize: 16,
+    buttonBox: {
+        flexDirection: 'row',
+        marginLeft: '5%',
+        marginRight: '5%'
     },
-    input: {
+    qrCodeBtn: {
         flex: 1,
-        color: 'white',
-        paddingLeft: 15,
-        paddingRight: 15,
-        borderWidth: 1,
-        borderRadius: 30,
-        borderColor: '#dadae8',
+        alignItems: 'center',
+        background: 'white',
+        borderRadius: 10,
+        backgroundColor: 'rgba(86, 125, 244, 0.1)',
+        padding: '4%',
+        marginRight: '1%',
+        flexDirection: 'row',
+        justifyContent: 'center'
     },
-    registerText: {
-        color: '#FFFFFF',
-        textAlign: 'center',
-        fontWeight: 'bold',
-        fontSize: 14,
-        alignSelf: 'center',
-        padding: 10,
-    },
-    errorText: {
-        color: 'red',
-        textAlign: 'center',
-        fontSize: 14,
+    navSignUpBtn: {
+        flex: 1,
+        alignItems: 'center',
+        borderRadius: 10,
+        padding: '4%',
+        backgroundColor: '#567DF4',
+        marginLeft: '1%',
+        flexDirection: 'row',
+        justifyContent: 'center'
     }
 })
