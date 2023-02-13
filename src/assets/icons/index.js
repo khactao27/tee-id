@@ -31,5 +31,7 @@ export default {
     privacy: require('./privacy.png'),
     cancel: require('./cancel.png'),
 
-    avatarDefault: require('./avatar-default.png')
+    avatarDefault: require('./avatar-default.png'),
+
+    backBtn: require('./backBtn.png')
 }

@@ -12,14 +12,32 @@ const Login = ({ navigation }) => {
                 <View style={styles.header}>
                     <ImageBackground source={images.illustration} style={{
                         flex: 1,
-                        alignItems: 'center',
+                        paddingLeft: '10%',
+                        paddingBottom: '20%',
                         flexDirection: 'column-reverse'
                     }} resizeMode='cover'>
                         <View>
-                            <Text>Wellcome To</Text>
-                            <Text> Tee ID</Text>
-                            <Text>Best app for Info Security</Text>
-                            <Text>Join For Free</Text>
+                            <Text style={{
+                                fontStyle: 'normal',
+                                fontWeight: 400,
+                                fontSize: 20,
+                                color: '#22215B'
+                            }}>Wellcome To</Text>
+
+                            <Text style={{
+                                fontStyle: 'normal',
+                                fontWeight: 700,
+                                fontSize: 38,
+                                color: '#22215B'
+                            }}> Tee ID</Text>
+
+                            <Text style={{
+                                fontStyle: 'normal',
+                                fontWeight: 400,
+                                fontSize: 14,
+                                color: '#7B7F9E'
+                            }}>Best app for Info Security {"\n \n \n"}
+                                Join For Free</Text>
                         </View>
                     </ImageBackground>
                 </View>

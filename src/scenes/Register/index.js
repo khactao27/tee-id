@@ -17,13 +17,15 @@ import DatePicker from 'react-native-date-picker'
 import SelectDropdown from 'react-native-select-dropdown'
 import styles from './styles'
 import images from '@assets/images'
+import icons from '@assets/icons'
+import { MaterialIcon } from '@components/Icon'
 
 export const Register = ({ navigation }) => {
 
     const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
     const signUp = async () => {
-
+        navigation.navigate('MainTab')
     }
 
     return (
@@ -33,9 +35,14 @@ export const Register = ({ navigation }) => {
                     source={images.illustrationRegister}
                     style={{
                         flex: 1,
-                        alignItems: 'center',
-                        flexDirection: 'column-reverse'
+                        justifyContent: 'center',
+                        paddingLeft: '5%'
                     }} resizeMode='cover'>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Login')}
+                    >
+                        <Image source={icons.backBtn} style={{ width: 20, height: 20 }} />
+                    </TouchableOpacity>
                 </ImageBackground>
             </View>
             <View style={styles.body}>
@@ -46,37 +53,69 @@ export const Register = ({ navigation }) => {
                         color: '#12121D',
                         fontSize: 28
                     }}>Let's Get Started!</Text>
-                    <Text>Sign up with your infomation of fill form to continue</Text>
+                    <Text style={{
+                        fontStyle: 'normal',
+                        fontWeight: 400,
+                        fontSize: 14,
+                        color: 'rgba(18, 18, 29, 0.6)',
+                        paddingTop: '2%'
+                    }}>Sign up with your infomation of fill form to continue</Text>
                 </View>
                 <ScrollView>
                     <View>
                         <View style={styles.inputBox}>
-                            <Text>Icon</Text>
+                            <MaterialIcon
+                                name='email'
+                                size='extraLarge'
+                                color='gray'
+                            />
                             <TextInput placeholder='Email' />
                         </View>
 
                         <View style={styles.inputBox}>
-                            <Text>Icon</Text>
+                            <MaterialIcon
+                                name='menu'
+                                size='extraLarge'
+                                color='black'
+                            />
                             <TextInput placeholder='Name' />
                         </View>
 
                         <View style={styles.inputBox}>
-                            <Text>Icon</Text>
+                            <MaterialIcon
+                                name='menu'
+                                size='extraLarge'
+                                color='black'
+                            />
                             <Text>Gender</Text>
                         </View>
 
                         <View style={styles.inputBox}>
-                            <Text>Icon</Text>
+                            <MaterialIcon
+                                name='dns'
+                                size='extraLarge'
+                                color='black'
+                            />
                             <TextInput placeholder='Address' />
                         </View>
 
                         <View style={styles.inputBox}>
-                            <Text>Icon: </Text>
+                            <MaterialIcon
+                                name='email'
+                                size='extraLarge'
+                                color='black'
+                            />
                             <TextInput placeholder='Date of birth' />
                         </View>
                     </View>
                 </ScrollView>
-                <View style={styles.inputBox}>
+                <View style={{
+                    flexDirection: 'row',
+                    paddingTop: 16,
+                    paddingBottom: 16,
+                    alignItems: 'center',
+                    gap: 16,
+                }}>
                     <CheckBox
                         disabled={false}
                         value={toggleCheckBox}
