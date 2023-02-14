@@ -155,7 +155,7 @@ export const Profile = ({ navigation }) => {
                     }}>
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
-                            <View>
+                            <View style={{justifyContent: 'flex-end'}}>
                                 <TouchableOpacity
                                     onPress={() => setModalVisible(false)}>
                                     <Text>X</Text>

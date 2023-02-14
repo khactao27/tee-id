@@ -2,19 +2,15 @@ import { useState } from 'react'
 import {
     SafeAreaView,
     Text,
-    Button,
     ScrollView,
     Image,
     View,
-    KeyboardAvoidingView,
     TextInput,
     TouchableOpacity,
     ImageBackground
 } from 'react-native'
 
 import CheckBox from '@react-native-community/checkbox';
-import DatePicker from 'react-native-date-picker'
-import SelectDropdown from 'react-native-select-dropdown'
 import styles from './styles'
 import images from '@assets/images'
 import icons from '@assets/icons'
