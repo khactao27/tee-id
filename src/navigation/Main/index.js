@@ -3,6 +3,7 @@ import { Home } from '@scenes/Home'
 import { Profile } from '@scenes/Profile'
 import { Devices } from '@scenes/Device'
 import { QRCode } from '@scenes/QRCode'
+import { Scanner } from '@scenes/Scanner'
 import { Button, Image, Text } from 'react-native'
 import icons from '@assets/icons'
 import { MaterialIcon } from '@components/Icon'
@@ -44,7 +45,7 @@ const MainTab = () => {
             })}>
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen options={{headerTitle: 'Yêu cầu truy cập', headerShown: true }} name="Devices" component={Devices} />
-            <Tab.Screen name="QRCode" component={QRCode} />
+            <Tab.Screen name="QRCode" options={{headerShown: false }} component={Scanner} />
             <Tab.Screen name="Application" options={{ tabBarBadge: 5 }} component={Notification} />
             <Tab.Screen
                 options={{

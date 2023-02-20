@@ -33,5 +33,6 @@ export default {
 
     avatarDefault: require('./avatar-default.png'),
 
-    backBtn: require('./backBtn.png')
+    backBtn: require('./backBtn.png'),
+    camera: require('./camera.png')
 }
