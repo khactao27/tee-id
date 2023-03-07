@@ -8,10 +8,12 @@ import images from '@assets/images'
 
 export const Scanner = () => {
     const [scanner, setScanner] = useState(false)
-    const [scanResult, setScanResult] = useState(false)
+    const [scanResult, setScanResult] = useState('')
 
     const onSuccess = (e) => {
         console.log(e.data)
+        setScanner(false)
+        setScanResult(e.data)
     }
 
     return (
@@ -19,25 +21,53 @@ export const Scanner = () => {
             <View style={styles.header}>
 
             </View>
-            <View style={styles.card}>
-                <Image source={icons.camera} />
-                <Text>Please move your camera over the QR Code</Text>
-                <Image source={images.qrCode} />
-                <TouchableOpacity >
-                    <View style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        borderRadius: 10,
-                        borderWidth: 2,
-                        borderColor: 'black'
-                    }}>
-                        <Image source={icons.camera} />
-                        <Text>Scan</Text>
-                    </View>
+            {
+                !scanner && !scanResult &&
+                <View style={styles.card}>
+                    <Image source={icons.camera} />
+                    <Text>Please move your camera over the QR Code</Text>
+                    <Image source={images.qrCode} />
+                    <TouchableOpacity
+                        onPress={() => setScanner(true)} >
+                        <View style={{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            borderRadius: 10,
+                            borderWidth: 2,
+                            borderColor: 'black',
+                            marginBottom: '5%',
+                            paddingRight: '5%',
+                            paddingLeft: '5%'
+                        }}>
+                            <Image source={icons.camera} />
+                            <Text>Scan</Text>
+                        </View>
 
-                </TouchableOpacity>
-            </View>
+                    </TouchableOpacity>
+                </View>
+            }
 
+            {
+                scanResult &&
+                <Text>{scanResult}</Text>
+            }
+
+            {
+                scanner &&
+                <QRCodeScanner
+                    reactivate={true}
+                    showMarker={true}
+                    onRead={onSuccess}
+                    topContent={
+                        <Text>Please move your camera {"\n"} over QR Code</Text>
+                    }
+                    bottomContent={
+                        <View>
+                            <Text>Hello</Text>
+                        </View>
+                    }
+                />
+            }
             <View style={styles.bottomContent}>
 
             </View>

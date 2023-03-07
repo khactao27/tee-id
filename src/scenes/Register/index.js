@@ -14,7 +14,6 @@ import CheckBox from '@react-native-community/checkbox';
 import styles from './styles'
 import images from '@assets/images'
 import icons from '@assets/icons'
-import { MaterialIcon } from '@components/Icon'
 
 export const Register = ({ navigation }) => {
 
@@ -60,47 +59,22 @@ export const Register = ({ navigation }) => {
                 <ScrollView>
                     <View>
                         <View style={styles.inputBox}>
-                            <MaterialIcon
-                                name='email'
-                                size='extraLarge'
-                                color='gray'
-                            />
                             <TextInput placeholder='Email' />
                         </View>
 
                         <View style={styles.inputBox}>
-                            <MaterialIcon
-                                name='menu'
-                                size='extraLarge'
-                                color='black'
-                            />
                             <TextInput placeholder='Name' />
                         </View>
 
                         <View style={styles.inputBox}>
-                            <MaterialIcon
-                                name='menu'
-                                size='extraLarge'
-                                color='black'
-                            />
                             <Text>Gender</Text>
                         </View>
 
                         <View style={styles.inputBox}>
-                            <MaterialIcon
-                                name='dns'
-                                size='extraLarge'
-                                color='black'
-                            />
                             <TextInput placeholder='Address' />
                         </View>
 
                         <View style={styles.inputBox}>
-                            <MaterialIcon
-                                name='email'
-                                size='extraLarge'
-                                color='black'
-                            />
                             <TextInput placeholder='Date of birth' />
                         </View>
                     </View>
