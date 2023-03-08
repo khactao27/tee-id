@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "557939222473",
+    "project_id": "tee-app-49bef",
+    "storage_bucket": "tee-app-49bef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557939222473:android:7f02a6f23b2f602257ea18",
+        "android_client_info": {
+          "package_name": "com.teeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557939222473-5cljuuld3p4cfofvt9rok443are2eo82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhplmr3QzKOyhhe3xg_BuADv1YIJbFZ5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557939222473-5cljuuld3p4cfofvt9rok443are2eo82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

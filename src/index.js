@@ -5,6 +5,7 @@ import store from '@store'
 import Navigator from '@navigation/App'
 import { NavigationContainer } from '@react-navigation/native'
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
+import { useEffect } from 'react'
 
 const App = () => {
     return (
