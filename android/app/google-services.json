@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "557939222473",
-    "project_id": "tee-app-49bef",
-    "storage_bucket": "tee-app-49bef.appspot.com"
+    "project_number": "1065315711560",
+    "project_id": "teeid-eaa77",
+    "storage_bucket": "teeid-eaa77.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:557939222473:android:7f02a6f23b2f602257ea18",
+        "mobilesdk_app_id": "1:1065315711560:android:8ebf319fddd00d122cf67d",
         "android_client_info": {
-          "package_name": "com.teeapp"
+          "package_name": "com.teeid"
         }
       },
       "oauth_client": [
         {
-          "client_id": "557939222473-5cljuuld3p4cfofvt9rok443are2eo82.apps.googleusercontent.com",
+          "client_id": "1065315711560-m0thu91v4esa73tjrc6b3fnaf20dfivm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDhplmr3QzKOyhhe3xg_BuADv1YIJbFZ5s"
+          "current_key": "AIzaSyBuAll1VFFdtYG8NAZrW0exrkxWg77eggM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "557939222473-5cljuuld3p4cfofvt9rok443are2eo82.apps.googleusercontent.com",
+              "client_id": "1065315711560-m0thu91v4esa73tjrc6b3fnaf20dfivm.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1065315711560-op0jaf2d1kne2gmfsn5rap98imu9md15.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.TeeID"
+              }
             }
           ]
         }
