@@ -16,7 +16,7 @@ import { BottomSheetModal } from '@gorhom/bottom-sheet'
 import { useState, useRef, useMemo, useEffect } from 'react'
 import styles from './styles'
 import icons from '@assets/icons'
-
+import { connect } from 'react-redux'
 
 class Profile extends Component {
     constructor() {
@@ -232,4 +232,11 @@ class Profile extends Component {
     }
 }
 
-export { Profile }
+export default connect(
+    state => ({
+
+    }),
+    dispatch => ({
+        
+    })
+)(Profile)

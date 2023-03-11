@@ -15,6 +15,7 @@ import CheckBox from '@react-native-community/checkbox';
 import styles from './styles'
 import images from '@assets/images'
 import icons from '@assets/icons'
+import { connect } from 'react-redux';
 
 class Register extends Component {
     constructor() {
@@ -121,4 +122,6 @@ class Register extends Component {
     }
 }
 
-export { Register }
+export default connect(
+
+)(Register)

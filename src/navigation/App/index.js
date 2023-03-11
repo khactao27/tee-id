@@ -6,7 +6,7 @@ import { Splash } from '@scenes/Splash'
 
 const Stack = createNativeStackNavigator();
 
-const MenuDrawer = () => {
+const Navigator = () => {
     return (
         <Stack.Navigator initialRouteName='Splash'>
             <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false }} />
@@ -15,9 +15,4 @@ const MenuDrawer = () => {
         </Stack.Navigator>
     )
 }
-
-const Navigator = ({ dispatch, state }) => (
-    <MenuDrawer />
-)
-
 export default connect(state => ({ state }))(Navigator)

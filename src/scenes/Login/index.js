@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import {
-    KeyboardAvoidingView,
     ImageBackground,
     Alert, TouchableOpacity,
-    SafeAreaView, ScrollView, 
-    Image, Text, TextInput, View
+    SafeAreaView, 
+    Image, Text, View
 } from 'react-native'
 import styles from './styles'
 import messaging from '@react-native-firebase/messaging'
 import icons from '@assets/icons'
 import images from '@assets/images'
-import { useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { connect } from 'react-redux'
 
 async function requestUserPermission(){
     const authStatus=await messaging.requestPermission();
@@ -159,4 +158,11 @@ class Login extends Component {
     }
 }
 
-export { Login }
+export default connect(
+    state => ({
+
+    }),
+    dispatch => ({
+
+    })
+)(Login)

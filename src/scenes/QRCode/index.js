@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Text, SafeAreaView } from 'react-native'
+import { SafeAreaView } from 'react-native'
+import { connect } from 'react-redux'
 
 class QRCode extends Component {
     
@@ -16,4 +17,11 @@ class QRCode extends Component {
     }
 }
 
-export { QRCode }
+export default connect(
+    state => ({
+
+    }),
+    dispatch => ({
+
+    })
+)(QRCode)

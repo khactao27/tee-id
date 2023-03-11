@@ -6,6 +6,7 @@ import QRCodeScanner from "react-native-qrcode-scanner"
 import styles from "./styles"
 import icons from '@assets/icons'
 import images from '@assets/images'
+import { connect } from 'react-redux'
 
 
 class Scanner extends Component {
@@ -85,4 +86,11 @@ class Scanner extends Component {
     }
 }
 
-export { Scanner }
+export default connect(
+    state => ({
+
+    }),
+    dispatch => ({
+
+    })
+)(Scanner)

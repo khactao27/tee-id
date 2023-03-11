@@ -1,20 +1,23 @@
+import React, { Component } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Home } from '@scenes/Home'
 import { Profile } from '@scenes/Profile'
 import { Devices } from '@scenes/Device'
-import { QRCode } from '@scenes/QRCode'
 import { Scanner } from '@scenes/Scanner'
-import { Button, Image, Text } from 'react-native'
+import {Image } from 'react-native'
 import icons from '@assets/icons'
-import { MaterialIcon } from '@components/Icon'
 import { Notification } from '@scenes/Notification'
-
 
 const Tab = createBottomTabNavigator()
 
-const MainTab = () => {
-    return (
-        <Tab.Navigator initialRouteName='Home'
+class MainTab extends Component {
+
+    constructor() {
+        super()
+    }
+
+    render() {
+        <Tab.Navigator initialRouteName='QRCode'
             screenOptions={({ route }) => ({
                 tabBarLabel: () => null,
                 tabBarIcon: ({ focused, color, size }) => {
@@ -34,11 +37,6 @@ const MainTab = () => {
                     else {
                         return <Image source={ focused ? icons.searchSymbolFocus : icons.searchSymbol } style={{width: 30, height: 30}}/>
                     }
-
-                    // You can return any component that you like here!
-                    // return <Ionicons name={iconName} size={size} color={color} />;
-                    // return <Image source={icons.home} style={{width: 30, height: 30}}/>
-                    // return <MaterialIcon name={iconName} size='extraLarge' color={color} />
                 },
                 tabBarActiveTintColor: 'tomato',
                 tabBarInactiveTintColor: 'gray'
@@ -55,9 +53,8 @@ const MainTab = () => {
                 name='Profile'
                 component={Profile}
             />
-            {/* <Tab.Screen options={{ title: "Settings" }} name="Settings" component={Settings} /> */}
         </Tab.Navigator>
-    )
+    }
 }
 
 export { MainTab }
