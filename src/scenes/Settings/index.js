@@ -1,11 +1,20 @@
+import React, { Component } from 'react'
 import { Text, SafeAreaView } from 'react-native'
 
-const Settings = () => {
-    return (
-        <SafeAreaView>
-            <Text>Settings</Text>
-        </SafeAreaView>
-    )
+
+class Settings extends Component {
+
+    constructor() {
+        super()
+    }
+
+    render() {
+        return (
+            <SafeAreaView>
+                <Text>Settings</Text>
+            </SafeAreaView>
+        )
+    }
 }
 
 export { Settings }

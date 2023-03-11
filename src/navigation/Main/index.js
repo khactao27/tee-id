@@ -46,11 +46,7 @@ const MainTab = () => {
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen options={{headerTitle: 'Yêu cầu truy cập', headerShown: true }} name="Devices" component={Devices} />
             <Tab.Screen name="QRCode" options={{headerShown: false }} component={Scanner} />
-            <Tab.Scree
-            
-            
-            
-            name="Application" options={{ tabBarBadge: 5 }} component={Notification} />
+            <Tab.Screen name="Application" options={{ tabBarBadge: 5 }} component={Notification} />
             <Tab.Screen
                 options={{
                     headerTitle: 'Dương Khắc Tạo',
