@@ -1,6 +1,7 @@
 import { actions } from './actions'
 
 const initialState = {
+    splash: 'splash',
     isAuthenticated: false,
     isFetching: false,
     errorMessage: '',

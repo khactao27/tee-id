@@ -4,9 +4,18 @@ import { AuthStack } from '../Auth'
 import { MainTab } from '../Main'
 import { Splash } from '@scenes/Splash'
 
+import {
+    NavigationHelpersContext,
+    useNavigationBuilder,
+    TabRouter,
+    TabActions,
+} from '@react-navigation/native';
+
+
 const Stack = createNativeStackNavigator();
 
-const Navigator = () => {
+const Navigator = ({ dispatch, state }) => {
+    console.log('Testttt', state.splash)
     return (
         <Stack.Navigator initialRouteName='Splash'>
             <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false }} />
@@ -15,4 +24,5 @@ const Navigator = () => {
         </Stack.Navigator>
     )
 }
+
 export default connect(state => ({ state }))(Navigator)

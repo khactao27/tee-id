@@ -5,16 +5,15 @@ import store from '@store'
 import Navigator from '@navigation/App'
 import { NavigationContainer } from '@react-navigation/native'
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
-import { useEffect } from 'react'
+import { Splash } from './scenes/Splash'
 
 const App = () => {
     return (
-        <Provider store={store()}>
+        <Provider store={store}>
             <BottomSheetModalProvider>
                 <NavigationContainer>
                     <Navigator />
                 </NavigationContainer>
-                {/* <PushController/> */}
             </BottomSheetModalProvider>
         </Provider>
     )

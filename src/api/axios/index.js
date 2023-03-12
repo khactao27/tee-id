@@ -1,5 +1,5 @@
 import  axios from 'axios'
-import { API_URL, APP_CODE } from 'react-native-dotenv'
+import { API_URL, APP_CODE } from '@env'
 
 let defaultConfig = {
     baseURL: `${API_URL}`,

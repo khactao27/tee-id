@@ -11,6 +11,8 @@ import icons from '@assets/icons'
 import images from '@assets/images'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { connect } from 'react-redux'
+import { logIn } from './actions'
+import { AccountTypes } from '../../services/biz/accounts'
 
 async function requestUserPermission(){
     const authStatus=await messaging.requestPermission();
@@ -60,11 +62,9 @@ async function getFcmToken(){
           }
           //setLoading(false);
         });
-    
-  
 }
 
-class Login extends Component {
+export class Login extends Component {
 
     async checkToken() {
         requestUserPermission()
@@ -120,7 +120,9 @@ class Login extends Component {
                         <View style={styles.buttonBox}>
                             <TouchableOpacity
                                 style={styles.qrCodeBtn}
-                                onPress={this.checkToken}
+                                onPress={() => {
+                                    console.log(this.props.splash)
+                                }}
                             >
                                 <Image source={icons.carbonQRCode} />
                                 <Text style={{
@@ -132,7 +134,7 @@ class Login extends Component {
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={styles.navSignUpBtn}
-                                onPress={() => this.props.navigation.navigate('Register')}
+                                onPress={() => this.props.navigation.navigate('MainTab')}
                             >
                                 <Text style={{
                                     fontStyle: 'normal',
@@ -150,7 +152,7 @@ class Login extends Component {
                             fontStyle: 'normal',
                             fontWeight: 400,
                             color: '#1B1D28'
-                        }}>Licensed by @Linsuu</Text>
+                        }}>Licensed by @Linsu</Text>
                     </View>
                 </View>
             </SafeAreaView>
@@ -160,9 +162,11 @@ class Login extends Component {
 
 export default connect(
     state => ({
-
+        splash: state.splash,
+        data: state.login,
+        appStore: state.appStore
     }),
     dispatch => ({
-
+        login: (appStore, type) => dispatch(logIn(appStore, type))
     })
 )(Login)

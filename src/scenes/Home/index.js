@@ -14,7 +14,7 @@ import { connect } from 'react-redux'
 import styles from './styles'
 import icons from '@assets/icons'
 
-class Home extends Component {
+export class Home extends Component {
     constructor() {
         super()
     }
@@ -64,4 +64,11 @@ class Home extends Component {
     }
 }
 
-export { Home }
+export default connect(
+    state => ({
+
+    }),
+    dispatch => ({
+
+    })
+)(Home)

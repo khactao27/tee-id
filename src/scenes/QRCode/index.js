@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { SafeAreaView } from 'react-native'
 import { connect } from 'react-redux'
 
-class QRCode extends Component {
+export class QRCode extends Component {
     
     constructor() {
         super()

@@ -6,24 +6,26 @@ import images from '@assets/images'
 import { connect } from 'react-redux'
 import { loadUser } from './actions'
 
-class Splash extends Component {
+export class Splash extends Component {
 
     constructor() {
         super();
         this.state = {
-            animating: true
+            animating: true,
         };
       }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.props.navigation.replace('Auth')
-        }, 3000)
+        console.log('splash', this.props.splasher)
+        // setTimeout(() => {
+        //     this.props.navigation.replace('Auth')
+        // }, 3000)
     }
 
     render() {
         return (
             <SafeAreaView style={styles.container}>
+                {console.log(this.props.splasher)}
                 <Image source={images.logo}
                     style={{ width: '90%', resizeMode: 'contain', margin: 30 }} />
                 <ActivityIndicator
@@ -37,10 +39,12 @@ class Splash extends Component {
     }
 }
 
+const mapStateToProps = state => ({
+    splasher: state.splash
+});
+
 export default connect(
-    state => ({
-        splash: state.splash
-    }),
+    mapStateToProps,
     dispatch => ({
         load: (appStore) => dispatch(loadUser(appStore))
     })

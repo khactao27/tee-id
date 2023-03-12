@@ -9,7 +9,7 @@ import images from '@assets/images'
 import { connect } from 'react-redux'
 
 
-class Scanner extends Component {
+export class Scanner extends Component {
     constructor() {
         super()
         this.state = {

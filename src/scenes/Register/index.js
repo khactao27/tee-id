@@ -17,7 +17,7 @@ import images from '@assets/images'
 import icons from '@assets/icons'
 import { connect } from 'react-redux';
 
-class Register extends Component {
+export class Register extends Component {
     constructor() {
         super()
         this.state = {
@@ -123,5 +123,10 @@ class Register extends Component {
 }
 
 export default connect(
+    state=> ({
 
+    }),
+    dispatch => ({
+        
+    })
 )(Register)

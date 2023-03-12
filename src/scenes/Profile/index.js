@@ -18,7 +18,7 @@ import styles from './styles'
 import icons from '@assets/icons'
 import { connect } from 'react-redux'
 
-class Profile extends Component {
+export class Profile extends Component {
     constructor() {
         super();
         this.state = {
@@ -85,7 +85,7 @@ class Profile extends Component {
                         </View>
                         <View style={styles.editButton}>
                             <TouchableOpacity
-                                onPress={() => setModalVisible(true)}
+                                onPress={() => this.setState({...this.state, modalVisible: true })}
                             >
                                 <Text>Edit Profile</Text>
                             </TouchableOpacity>
@@ -130,7 +130,7 @@ class Profile extends Component {
                             <View style={styles.modalView}>
                                 <View style={{justifyContent: 'flex-end'}}>
                                     <TouchableOpacity
-                                        onPress={() => setModalVisible(false)}>
+                                        onPress={() => this.setState({...this.state, modalVisible: false })}>
                                         <Text>X</Text>
                                     </TouchableOpacity>
                                 </View>
@@ -166,6 +166,7 @@ class Profile extends Component {
                         </View>
                     </Modal>
                 </SafeAreaView>
+
                 <BottomSheetModal
                     ref={this.state.bottomSheetModalRef}
                     index={2}
