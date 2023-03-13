@@ -10,28 +10,34 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const storeData = async (key, value) => {
     try {
-      await AsyncStorage.setItem(key, value)
+        await AsyncStorage.setItem(key, value)
     } catch (e) {
-      // saving error
+        // saving error
     }
 }
 
 const getData = async (key) => {
     try {
-      return await AsyncStorage.getItem(key)
-    } catch(e) {
-      return 
+        return await AsyncStorage.getItem(key)
+    } catch (e) {
+        return
     }
 }
-
 
 export const Splash = ({ navigation }) => {
 
     const [animating, setAnimating] = useState(true)
 
-    useEffect(async () => {
-        console.log('prive', await getData('privateKey'))
-    })
+    const loadUser = async () => {
+        console.log('prive', getData('privateKey'))
+        setTimeout(() => {
+            navigation.replace('Auth')
+        }, 3000)
+    }
+
+    useEffect(() => {
+        loadUser()
+    }, [])
 
     return (
         <SafeAreaView style={styles.container}>

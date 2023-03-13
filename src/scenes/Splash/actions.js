@@ -29,7 +29,7 @@ const loadUserFailure = () => {
 
 const loadUser = (appStore) => {
     return (dispatch) => {
-        console.log(Heello)
+        
     }
 }
 

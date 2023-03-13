@@ -3,13 +3,13 @@ import { API_URL, APP_CODE } from '@env'
 
 let defaultConfig = {
     baseURL: `${API_URL}`,
-    timeout: 3000,
+    timeout: 50000,
     headers: {'AppCode': `${APP_CODE}`, 'Accept': 'application/json'}
 };
 
 let interceptorConfig = {};
 
-let instance
+let instance = axios.create(defaultConfig);
 export default class _Axios {
     constructor(props) {
         if (props && typeof (props) == "object") {
@@ -54,7 +54,9 @@ export default class _Axios {
 
 async function get(url, cb) {
     try {
+        console.log("START")
         let response = await instance.get(url);
+        console.log('resppppp', response)
         return  cb(null, response);
     } catch (error){
         cb(error);
